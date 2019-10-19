@@ -1,8 +1,17 @@
+/* All */
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-size: 13px;
+    z-index: 0;
+}
+
+h1,
+p {
+    margin-bottom: 10px;
+    padding: 0px 2px;
 }
 
 .container {
@@ -10,14 +19,30 @@
     margin: auto;
 }
 
+/* mainNav */
+
 div.mainNav {
-    background-color: #0c3640;
-    color: rgb(153, 146, 146);
+    width: 100%;
     height: 60px;
+    color: rgb(153, 146, 146);
+    background-color: #0c3640;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    position: fixed;
+    z-index: 100;
+
 }
 
-div.mainNav-header {
+div.mainNavHeader {
     float: left;
+}
+
+div.mainNavHeader a.mainNavLogo {
+    width: 120px;
+    padding: 0px;
+}
+
+div.mainNavHeader img {
+    width: 100%;
 }
 
 div.mainNav ul {
@@ -43,9 +68,9 @@ div.mainNav a {
     color: #ececec;
 
 }
-div.mainNav a.homeBtn
-{
-    width:56px;
+
+div.mainNav a.mainNavLink {
+    width: 56px;
 }
 
 div.mainNav ul a::after {
@@ -64,10 +89,117 @@ div.mainNav ul a:hover {
     background-color: #145a6b;
     transition: all .4s;
 }
-div.mainNav ul a:hover::after{
+
+div.mainNav ul a:hover::after {
     width: 52px;
     transition: all .3s ease;
 }
-div.mainNav ul a.homeBtn:hover::after{
+
+div.mainNav ul a.mainNavLink:hover::after {
     width: 26px;
+}
+
+/* mainHead */
+
+div.mainHead {
+    color: white;
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
+}
+
+div.mainHeadBackground {
+    position: absolute;
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
+}
+
+div.mainOverlay {
+    position: absolute;
+    width: 100%;
+    height: 470px;
+    color: rgb(12, 52, 61);
+    background-color: rgb(28, 69, 135);
+    background-image: linear-gradient(140deg, currentcolor, transparent);
+    opacity: 0.7;
+    z-index: 0;
+}
+
+div.mainBGImg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: -10;
+    clip: rect(0, 1352px, 470px, 0);
+}
+
+div.bg1024 {
+    position: fixed;
+    width: 1352px;
+    height: 974px;
+    background-image: url("image/background.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transform: translate3d(0px, -244.25px, 0px);
+    /* overflow: hidden; */
+    visibility: visible;
+    z-index: -10;
+}
+
+div.mainHeadContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 470px;
+    padding: 50px 15px 70px 15px;
+}
+
+div.mainHead div.textArea {
+    width: 90%;
+    padding: 2vw;
+    text-align: center;
+}
+
+div.mainHead h1.subtitle {
+    font-size: 33px;
+    line-height: 1.3em;
+    margin-bottom: 5px;
+    min-height: 10px;
+}
+
+div.mainHead h1.title {
+    font-size: 48px;
+    line-height: 1.3em;
+    font-family: Roboto;
+    font-weight: bold;
+}
+
+div.mainHead p {
+    line-height: 1.7em;
+    opacity: 0.8;
+}
+
+/* partValue */
+
+div.partValue {
+    width: 100%;
+    height: 132.8px;
+    background-color: white;
+    z-index: 0;
+}
+
+/* partCoor */
+
+div.partCoor {
+    width: 100%;
+    height: 319.2px;
+
 }
