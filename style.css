@@ -1,3 +1,11 @@
+/* font */
+/* @import url("fonts.googleapis.com/…);
+
+@font-face{
+    font-family: 'Oswald';
+    src: url("https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Oswald:400,700-");
+} */
+
 /* All */
 
 * {
@@ -8,10 +16,39 @@
     z-index: 0;
 }
 
-h1,
-p {
+h1, h2, h3, h4, p {
     margin-bottom: 10px;
-    padding: 0px 2px;
+    font-family: Microsoft YaHei;
+    /* font-family: "Microsoft YaHei","Hiragino Sans GB",SimHei,STHeiti; */
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    /* font-family: Oswald; */
+    font-size: 33px;
+    font-weight: 500;
+    line-height: 1.3em;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1em;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+hr {
+    height: 0;
+    box-sizing: content-box;
+    margin: 20px 10px;
+    border: 0px;
+    border-top: 1px solid;
 }
 
 .container {
@@ -19,17 +56,24 @@ p {
     margin: auto;
 }
 
+div.hoverShadow {
+    transition: all .2s ease-out;
+}
+
+div.hoverShadow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0rem 0rem 40px 5px rgba(0,0,0,0.15);
+}
+
 /* mainNav */
 
 div.mainNav {
-    width: 100%;
-    height: 60px;
-    color: rgb(153, 146, 146);
-    background-color: #0c3640;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     position: fixed;
+    width: 100%;
+    color: #999292;
+    background-color: #0c3640;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
     z-index: 100;
-
 }
 
 div.mainNavHeader {
@@ -66,7 +110,6 @@ div.mainNav a {
     width: 82px;
     padding: 15px;
     color: #ececec;
-
 }
 
 div.mainNav a.mainNavLink {
@@ -86,7 +129,7 @@ div.mainNav ul a::after {
 
 div.mainNav ul a:hover {
     color: white;
-    background-color: #145a6b;
+    background-color: #145a6b; 
     transition: all .4s;
 }
 
@@ -102,6 +145,7 @@ div.mainNav ul a.mainNavLink:hover::after {
 /* mainHead */
 
 div.mainHead {
+    position: relative;
     color: white;
     width: 100%;
     height: 470px;
@@ -119,8 +163,8 @@ div.mainOverlay {
     position: absolute;
     width: 100%;
     height: 470px;
-    color: rgb(12, 52, 61);
-    background-color: rgb(28, 69, 135);
+    color: #0c343d;
+    background-color: #1c4587;
     background-image: linear-gradient(140deg, currentcolor, transparent);
     opacity: 0.7;
     z-index: 0;
@@ -138,18 +182,18 @@ div.mainBGImg {
     clip: rect(0, 1352px, 470px, 0);
 }
 
-div.bg1024 {
+div.mainBG1024 {
     position: fixed;
     width: 1352px;
     height: 974px;
-    background-image: url("image/background.jpg");
+    background-image: url("images/background.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     transform: translate3d(0px, -244.25px, 0px);
     /* overflow: hidden; */
     visibility: visible;
-    z-index: -10;
+    z-index: -1;
 }
 
 div.mainHeadContainer {
@@ -169,10 +213,11 @@ div.mainHead div.textArea {
 }
 
 div.mainHead h1.subtitle {
+    min-height: 42.9px;
     font-size: 33px;
     line-height: 1.3em;
     margin-bottom: 5px;
-    min-height: 10px;
+    display: block;
 }
 
 div.mainHead h1.title {
@@ -185,21 +230,674 @@ div.mainHead h1.title {
 div.mainHead p {
     line-height: 1.7em;
     opacity: 0.8;
+    padding: 0px 2px;
 }
 
-/* partValue */
+/* mainBlock */
 
-div.partValue {
+div.mainBlock {
+    position: relative;
     width: 100%;
-    height: 132.8px;
+    height: 174px;
     background-color: white;
     z-index: 0;
 }
 
-/* partCoor */
+div.mainBlockContainer {
+    position: relative;
+    height: 254px;
+    bottom: 80px;
+    padding: 10px;
+    background: #f8f8f8;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row wrap;
+}
 
-div.partCoor {
+div.blockItem {
+    width: 287.5px;
+    height: 234px;
+    padding: 10px;
+    color: #434343;
+    text-align: center;
+}
+
+div.blockImg {
+    height: 110px;
+    padding: 20px 15px;
+    justify-content: center;
+    text-align: center;
+}
+
+div.blockIcon {
+    width: 70px;
+    height: 70px;
+    /* margin: auto; */
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 100px;
+    font-size: 30px;
+    line-height: 70px;
+}
+
+h4.blockTitle {
+    padding: 0 15px;
+    font-weight: normal;
+    line-height: 1.1em;
+}
+
+p.blockDescription {
+    padding: 20px 15px;
+    /* color: #434343; */
+    line-height: 1.7em;
+    font-weight: 200;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* part commonElement */
+
+div.titleContainer {
+    position: relative;
+    /* width: 100%; */
+    /* height: 315px; */
+    padding: 60px 15px;
+    /* padding-bottom: 45px; */
+    /* background-color: white; */
+}
+
+div.partText {
+    /* margin-bottom: 80px; */
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+div.partText hr {
+    flex: 1 1 0%;
+}
+
+div.partTitle {
+    width: 192px;
+    height: 129.9px;
+    margin: 0 10px;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+div.partTitle h2,h3 {
+    margin-top: 10px;
+}
+
+div.partTitle h2::after {
+    content: "▾";
+    line-height: 1em;
+    display: block;
+}
+
+div.subpartText {
+    color: #434343;
+}
+
+div.subpartText h3{
+    line-height: 1.3em;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    display: inline-block;
+
+}
+
+div.subpartText h3::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    width: 50px;
+    height: 10px;
+    margin: 6px 0 14px 13px;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+}
+
+div.subpartText p {
+    line-height: 1.7em;
+    padding: 0px 2px;
+    opacity: 0.8;
+    margin-bottom: 10px;;
+
+}
+
+/*  part Value */
+
+div.valueText {
+    margin-bottom: 65px;
+}
+
+/* part A */
+
+div.partA {
+    position: relative;
+    display: flex;
+    margin-bottom: 60px;
+}
+
+div.partABac {
+    position: absolute;
     width: 100%;
-    height: 319.2px;
+    height: 359.5px;
+    background-color: #f8f8f8;
+}
 
+div.partACon {
+    /* height: 409.5px; */
+    margin-top: -110px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+div.partAImg {
+    /* width: 585px; */
+    width: 585px;
+    height: 409.5px;
+    position: absolute;
+    background-image: url("images/pic1.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100% 50%;
+    /* transform: rotate(0deg) scale(1) translate(0%, 0%); */
+    /* background-attachment: scroll; */
+}
+
+div.partAText {
+    height: 409.5px;
+    margin-left: 585px;
+    display: flex;
+    padding: 2vw;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* part B */
+
+div.partB {
+    position: relative;
+    display: flex;
+    /* margin-bottom: 60px;  */
+}
+
+div.partBBac {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    height: 555.45px;
+    clip: rect(0, 1352px, 555.45px, 0);
+    
+}
+
+div.partBBGImg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 1352px;
+    height: 1142px;
+    background-image: url("images/bg.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100%;
+    margin-top: -300px;
+
+}
+
+div.partBCon {
+    /* height: px; */
+    margin-top: -110px;
+    margin-bottom: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+div.partBImg {
+    width: 780px;
+    height: 545.45px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-image: url("images/pic2.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100% 50%;
+    /* transform: rotate(0deg) scale(1) translate(0%, 0%); */
+    /* background-attachment: scroll; */
+}
+
+div.partBText {
+    height: 545.45px;
+    margin-right: 780px;
+    display: flex;
+    padding: 2vw;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* part C */
+
+div.partC {
+    position: relative;
+    display: flex;
+    /* margin-bottom: 60px;  */
+}
+
+div.partCBac {
+    position: absolute;
+    width: 100%;
+    height: 359.5px;
+    background-color: #f8f8f8;
+}
+
+div.partCCon {
+    /* height: px; */
+    margin-top: -110px;
+    margin-bottom: 60px;
+    position: relative;
+    /* overflow: hidden; */
+    /* background-color: #f8f8f8; */
+}
+
+div.partCImg {
+    width: 585px;
+    height: 409.5px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-image: url("images/pic3.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100% 50%;
+    /* transform: rotate(0deg) scale(1) translate(0%, 0%); */
+    /* background-attachment: scroll; */
+}
+
+div.partCText {
+    height: 409.5px;
+    margin-left: 585px;
+    display: flex;
+    padding: 2vw;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* part Coop */
+
+div.partCoop {
+    position: relative;
+}
+
+div.coopBackground {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+
+div.coopBG1024 {
+    position: relative;
+    height: 100%;
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+div.coopOverlay {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color:#0c343d;
+    /* background-image: linear-gradient(270deg, currentcolor, transparent); */
+    opacity: 0.8;
+}
+
+div.coopTitle {
+    width: 345.5px;
+    color:#efefef;
+}
+
+div.coopContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 120px;
+}
+
+div.coopBlock {
+    width: 380px;
+    color: black;
+    background-color: rgba(255,255,255,0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;   
+    padding-bottom: 50px;
+}
+
+div.coorBlockMiddle {
+    position: relative;
+    color: white;
+    z-index: 1;
+}
+
+div.blockMiddle {
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    top: -5%;
+    background-color: #3d85c6;
+}
+
+div.coopBlock h3.coopH3 {
+    padding: 30px;
+    word-spacing: normal;
+    letter-spacing: 5px;
+    text-align: center;
+    line-height: 1.1em;
+}
+
+div.coopBlock img {
+    width: 380px;
+    height: 233px;
+    background-size: cover;
+    background-position: center center;
+}
+
+div.coopBlock p {
+    text-align: center;
+    word-spacing: normal;
+    font-weight: lighter;
+    line-height: 1.7em;
+    padding: 20px 30px 0px;
+    margin-bottom: 14px;
+}
+
+
+/* part Join */
+
+div.partJoin {
+    color: #434343;
+    text-align: center;
+}
+
+#joinUs {
+    padding-bottom: 10px;
+}
+
+div.memberContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 10px;
+    margin-top: -33px;
+}
+
+div.memberBlock {
+    position: relative;
+    margin: 10px;
+    width: 390px;
+    /* text-align: center; */
+    line-height: 1.7em;
+    overflow: hidden;
+}
+
+div.memberImg {
+    margin: 30px 30px 20px;
+}
+
+div.memberWHF {
+    padding-top: 100%;
+    border-radius: 50%;
+    background: url("images/whf.jpeg");
+    background-size: cover;
+    background-position-x: center;
+}
+
+div.memberSWY {
+    padding-top: 100%;
+    border-radius: 50%;
+    background: url("images/swy.jpeg");
+    background-size: cover;
+    background-position-x: center;
+}
+
+div.memberTeam {
+    padding-top: 100%;
+    border-radius: 50%;
+    background: url("images/team.jpg");
+    background-size: cover;
+    background-position-x: center;
+}
+
+div.memberBlock h4 {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.1em;
+    margin: 10px 0 5px;
+}
+
+div.memberBlock p.subtitle {
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+div.memberBlock p.description {
+    font-weight: 200;
+    padding: 5px 15px 10px;
+    margin-bottom: 0px;
+    text-align: left;
+    opacity: 0.8;
+}
+
+div.jobContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 10px;
+}
+
+div.jobBlock {
+    position: relative;
+    margin: 10px 10px 58px;
+    width: 555px;
+    background-color: #f4f4f4;
+    line-height: 1.7em;
+}
+
+div.jobImg {
+    width: 60px;
+    height: 60px;
+    margin: -29px auto 0;
+    border-radius: 50%;
+}
+
+div.jobProduct {
+    background-image: url(images/p1.jpg);
+    background-size: cover;
+}
+
+div.jobMining {
+    background-image: url(images/p2.jpg);
+    background-size: cover;
+}
+
+div.jobStage {
+    background-image: url(images/p3.jpg);
+    background-size: cover;
+}
+
+div.jobWeb {
+    background-image: url(images/p4.jpg);
+    background-size: cover;
+}
+
+div.jobBlock h4 {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.1em;
+    margin: 10px 0 5px;
+}
+
+div.jobBlock p.subtitle {
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+div.jobBlock p.description {
+    font-size: 14px;
+    font-weight: 200;
+    padding: 5px 25px 20px;
+    margin-bottom: 0px;
+    text-align: left;
+    opacity: 0.8;
+    line-height: 2em;
+}
+
+/* part contact */
+
+#contactUs {
+    padding-bottom: 0px;
+}
+
+div.contactContainer {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* flex-direction: column; */
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    padding: 0 15px;
+    height: 210px;
+}
+
+div.contactContent {
+    color: #434343;
+    /* padding-bottom: 10px; */
+    display: flex;
+    /* justify-content: center; */
+    /* justify-content: space-between;    */
+    align-items: center;
+    /* flex-wrap: wrap; */
+    /* align-content: center; */
+    margin: 10px 0;
+    /* flex: 1 1 0%; */
+}
+
+div.contactContent ul {
+    margin-bottom: 10px;
+}
+
+/* common block */
+
+div.wordBlock {
+    position: relative;
+    margin-top: 10px;
+    padding-left: 10px;
+    flex: 1 1 0%;
+    /* width: 560px; */
+    /* line-height: 2em; */
+}
+
+div.wordBlock ul {
+    list-style-type: none;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+div.wordBlock li {
+    font-family: Microsoft YaHei;
+    min-height: 20px;
+    padding: 0px 5px;
+    margin-bottom: 9px;
+}
+
+div.wordBlock h4 {
+    margin: 10px 0;
+    padding-top: 10px;
+    padding-left: 8px;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+
+div.wordBlock p {
+    padding-left: 8px;
+    padding-right: 10px;
+    line-height: 1.7em;
+}
+
+div.wordBlock .subtitle {
+    padding-left: 8px;
+    margin: 10px 0 20px;
+    font-size: 14px;
+    line-height: 1.1em;
+}
+
+div.wordBlock .subtitle::after {
+    content: "";
+    height: 1px;
+    box-sizing: border-box;
+    display: block;
+    width: 50px;
+    position: relative;
+    left: 0px;
+    bottom: -4px;
+    border-bottom: 1px solid;
+}
+
+i.f-icon {
+    padding: 0 5px;
+    min-width: 30px;
+    text-align: center;
+}
+
+div.notFirstBlock::before{
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 1px solid;
+    opacity: 0.2;
+}
+
+/* main footer */
+
+div.mainFoot {
+    background-color: #434343;
+    /* height: 400px; */
+}
+
+div.footContainer {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    min-height: 330px;
+}
+
+div.footContent {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    /* align-items: center; */
+    /* align-content: stretch; */
+    color: #efefef;
+    padding-bottom: 10px;
 }
