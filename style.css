@@ -8,6 +8,10 @@
 
 /* All */
 
+body {
+    background-color: whtie;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -18,7 +22,8 @@
 
 h1, h2, h3, h4, p {
     margin-bottom: 10px;
-    font-family: Microsoft YaHei;
+    font-family: sans-serif, Microsoft YaHei;
+    text-align-last: center;
     /* font-family: "Microsoft YaHei","Hiragino Sans GB",SimHei,STHeiti; */
 }
 
@@ -48,7 +53,7 @@ hr {
     box-sizing: content-box;
     margin: 20px 10px;
     border: 0px;
-    border-top: 1px solid;
+    border-top: 1px solid #999292;
 }
 
 .container {
@@ -284,6 +289,7 @@ h4.blockTitle {
     padding: 0 15px;
     font-weight: normal;
     line-height: 1.1em;
+    z-index: 1;
 }
 
 p.blockDescription {
@@ -321,7 +327,6 @@ div.partTitle {
     width: 192px;
     height: 129.9px;
     margin: 0 10px;
-    text-align: center;
     flex: 0 0 auto;
 }
 
@@ -542,7 +547,6 @@ div.coopBackground {
     left: 0px;
 }
 
-
 div.coopBG1024 {
     position: relative;
     height: 100%;
@@ -563,6 +567,10 @@ div.coopOverlay {
     background-color:#0c343d;
     /* background-image: linear-gradient(270deg, currentcolor, transparent); */
     opacity: 0.8;
+}
+
+#busiCoop hr {
+    border-top: 1px solid #efefef;
 }
 
 div.coopTitle {
@@ -718,6 +726,7 @@ div.jobBlock {
     width: 555px;
     background-color: #f4f4f4;
     line-height: 1.7em;
+    max-height: 1000px;
 }
 
 div.jobImg {
@@ -760,7 +769,7 @@ div.jobBlock p.subtitle {
 }
 
 div.jobBlock p.description {
-    font-size: 14px;
+    /* font-size: 13px; */
     font-weight: 200;
     padding: 5px 25px 20px;
     margin-bottom: 0px;
@@ -900,4 +909,12 @@ div.footContent {
     /* align-content: stretch; */
     color: #efefef;
     padding-bottom: 10px;
+}
+
+.subpartText p, .partJoin p.description, .partContact h4, .partContact p, .mainFoot h4, .mainFoot p {
+    text-align-last: left;
+}
+
+#coreValue .titleContainer, #joinUS, #contactUS {
+    background-color: white;
 }
