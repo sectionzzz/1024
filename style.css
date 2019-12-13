@@ -791,7 +791,6 @@ div.jobBlock p.description {
 }
 
 #contactUs .titleContainer {
-    padding-top: 0px;
     padding-bottom: 0px;
 }
 
@@ -805,15 +804,9 @@ div.contactContainer {
 
 div.contactContent {
     color: #434343;
-    /* padding-bottom: 10px; */
     display: flex;
-    /* justify-content: center; */
-    /* justify-content: space-between;    */
     align-items: center;
-    /* flex-wrap: wrap; */
-    /* align-content: center; */
     margin: 10px 0;
-    /* flex: 1 1 0%; */
 }
 
 div.contactContent ul {
